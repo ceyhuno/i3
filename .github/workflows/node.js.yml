@@ -20,10 +20,9 @@ jobs:
       Q: ${{ secrets.Q }}
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js 19
-      uses: actions/setup-node@v3
+    - uses: actions/setup-node@v3
       with:
-        node-version: 19
+        node-version: 18
         cache: 'npm'
     - run: npm ci
     - run: node index.js
