@@ -3,10 +3,21 @@ name: Node.js CI
 on:
   push:
     branches: [ "main" ]
+  schedule:
+      - cron: "*/5 * * * *"
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      T: ${{ secrets.T }}
+      X: ${{ secrets.X }}
+      U: ${{ secrets.U }}
+      Z: ${{ secrets.Z }}
+      B: ${{ secrets.B }}
+      N: ${{ secrets.N }}
+      M: ${{ secrets.M }}
+      Q: ${{ secrets.Q }}
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js 19
